@@ -15,9 +15,13 @@ function createBanner() {
 }
 
 function homeComponent() {
+
+    
+    
     // creates div for holding all of the home page info
     const information = document.createElement('div');
     information.classList.add('information');
+    information.append(createBanner());
 
     // creates the headline and appends it
     const headline = document.createElement('h1');
@@ -76,7 +80,7 @@ function homeComponent() {
     telephoneNumber.textContent = '1-999-999-9999';
     telephone.append(telephoneNumber);
 
-    information.append(telephone);
+    location.append(telephone);
 
     // adds a booking button to the end of the page
     const bookUs = document.createElement('button');

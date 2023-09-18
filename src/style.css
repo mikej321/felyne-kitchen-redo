@@ -91,6 +91,8 @@ body {
     background-color: var(--eerie-black);
     max-width: 375px;
     grid-template-columns: minmax(250px, 375px);
+    grid-template-areas: "navbar"
+                         "information";
     justify-content: center;
 }
 
@@ -99,6 +101,7 @@ body {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    grid-area: navbar;
 }
 
 .logo {
@@ -130,11 +133,40 @@ h1 {
 .linkbar > a {
     text-decoration: none;
     color: var(--sunglow);
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+    display: inline-block;
+    position: relative;
+    
+}
+
+.linkbar > a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark-goldenrod);
+    transition: opacity 0.3s ease-in,
+                transform 0.3s ease-in;
+}
+
+.linkbar > a:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0.4rem, 0);
+}
+
+.linkbar > a:hover {
+    color: var(--celeste);
 }
 
 .banner {
     justify-self: center;
     margin-block: 2rem;
+    width: 255px;
+    height: 135px;
 }
 
 .information {
@@ -142,7 +174,7 @@ h1 {
     font-family: 'Dekko';
     display: grid;
     justify-items: center;
-    
+    grid-area: information;
 }
 
 .choose {
@@ -186,14 +218,148 @@ h2 {
     background-color: var(--persian-green);
     color: var(--timberwolf);
     border: none;
-    padding: 1.5rem;
+    width: 11rem;
+    height: 4rem;
     border-radius: 12px;
     margin-bottom: 3rem;
     font-family: 'Josefin Slab Regular';
     cursor: pointer;
-    transition: 300ms;
+    transition: width 300ms ease-in-out,
+                background-color 300ms ease-in;
 }
 
 .bookUs:hover {
-    transform: scale(1.1);
+    width: 13rem;
+    background-color: var(--brunswick-green);
+}
+
+@media screen and (min-width: 600px) {
+    
+    .content {
+        display: grid;
+        background-color: var(--eerie-black);
+        max-width: 1440px;
+        grid-template-columns: minmax(375px, 1440px);
+        justify-content: center;
+    }
+
+    .navbar {
+
+    }
+
+    .logo {
+        width: 25.5rem;
+        height: 3.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo > img {
+        width: 25.6rem;
+        height: 5rem;
+    }
+
+    h1 {
+
+    }
+
+    .linkbar {
+
+    }
+
+    .linkbar > a {
+        font-size: 1.8rem;
+    }
+
+    .linkbar > a:hover {
+
+    }
+
+    .linkbar > a::after {
+        height: 2px;
+        
+    }
+    
+    .linkbar > a:hover::after {
+        
+    }
+
+    
+    .information {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: max-content;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas: "banner"
+                             "headline"
+                             "choose"
+                             "location"
+                             "reservation";
+        margin-top: 3rem;
+        margin-left: 5rem;
+        row-gap: 5rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+        text-align: center;
+        line-height: 6rem;
+    }
+    
+    .banner {
+        transform: scale(1.2);
+        grid-area: banner;
+        overflow: hidden;
+    }
+
+    .banner > img {
+                
+        
+    }
+
+    .banner > img:hover {
+        
+    }
+
+    .choose {
+        grid-area: choose;
+        margin-top: -3rem;
+    }
+
+    h2 {
+        grid-area: headline;
+        font-size: 3rem;
+    }
+
+    .choose > p,
+    .street > p {
+        font-size: 1.8rem;
+    }
+
+    .location {
+        grid-area: location;
+        font-size: 1.8rem;
+        margin-top: -3rem;
+    }
+
+    .telephone > a {
+
+    }
+
+    .telephone {
+
+    }
+
+    .bookUs {
+        grid-area: reservation;
+        margin-top: -5rem;
+        width: 14rem;
+        height: 5rem;
+    }
+
+    .bookUs:hover {
+        width: 15rem;
+    }
 }

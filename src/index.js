@@ -50,7 +50,6 @@ function createNav() {
 }
 
 content.append(createNav());
-content.append(createBanner());
 content.append(homeComponent());
 
 
