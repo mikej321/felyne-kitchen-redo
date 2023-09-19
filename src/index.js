@@ -4,7 +4,7 @@ import './style.css';
 import Logo from './logo.svg';
 export { content };
 import { homeComponent, createBanner } from './home.js';
-import { menuComponent } from './menu';
+import { menuComponent } from './menu.js';
 
 function createNav() {
     // Creates the navbar that will be shared across pages
@@ -50,8 +50,11 @@ function createNav() {
     return nav;
 }
 
+// content.append(createNav());
+// content.append(homeComponent());
+
 content.append(createNav());
-content.append(homeComponent());
+content.append(menuComponent());
 
 
 

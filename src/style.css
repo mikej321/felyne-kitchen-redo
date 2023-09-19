@@ -119,38 +119,6 @@ body {
     height: 3.1rem;
 }
 
-/* Styles for the home page */
-
-h1 {
-    font-size: 2.8rem;
-    color: var(--harvest-gold);
-    animation-name: flicker;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 1s;
-    animation-iteration-count: 2;
-    animation-fill-mode: both;
-    animation-direction: alternate;
-}
-
-@keyframes flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 99% {
-        color: #fff;
-        text-shadow: 0 0 4px #fff,
-        0 0 10px #fff,
-        0 0 18px #fff,
-        0 0 28px var(--harvest-gold),
-        0 0 42px var(--harvest-gold),
-        0 0 52px var(--harvest-gold),
-        0 0 62px var(--harvest-gold),
-        0 0 72px var(--harvest-gold);
-    }
-    20%, 24%, 55% {
-        text-shadow: none;
-    }
-
-}
-
 .linkbar {
     font-family: 'Josefin Slab Bold';
     display: flex;
@@ -191,6 +159,39 @@ h1 {
 .linkbar > a:hover {
     color: var(--celeste);
 }
+
+/* Styles for the home page */
+
+h1 {
+    font-size: 2.8rem;
+    color: var(--harvest-gold);
+    animation-name: flicker;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 99% {
+        color: #fff;
+        text-shadow: 0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 18px #fff,
+        0 0 28px var(--harvest-gold),
+        0 0 42px var(--harvest-gold),
+        0 0 52px var(--harvest-gold),
+        0 0 62px var(--harvest-gold),
+        0 0 72px var(--harvest-gold);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+
+}
+
 
 .banner {
     justify-self: center;
