@@ -64,6 +64,8 @@
     --eerie-black: #1F1F1F;
 }
 
+/* Default Styling */
+
 *,
 *::before,
 *::after {
@@ -117,8 +119,36 @@ body {
     height: 3.1rem;
 }
 
+/* Styles for the home page */
+
 h1 {
     font-size: 2.8rem;
+    color: var(--harvest-gold);
+    animation-name: flicker;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-iteration-count: 2;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 99% {
+        color: #fff;
+        text-shadow: 0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 18px #fff,
+        0 0 28px var(--harvest-gold),
+        0 0 42px var(--harvest-gold),
+        0 0 52px var(--harvest-gold),
+        0 0 62px var(--harvest-gold),
+        0 0 72px var(--harvest-gold);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+
 }
 
 .linkbar {
@@ -208,6 +238,29 @@ h2 {
 
 .telephone > a {
     color: var(--imperial-red);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease-in;
+    position: relative;
+}
+
+.telephone > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: var(--Keppel);
+    transition: transform 0.3s ease-in-out;
+}
+
+.telephone > a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
 }
 
 .telephone {
@@ -243,10 +296,6 @@ h2 {
         justify-content: center;
     }
 
-    .navbar {
-
-    }
-
     .logo {
         width: 25.5rem;
         height: 3.8rem;
@@ -260,20 +309,8 @@ h2 {
         height: 5rem;
     }
 
-    h1 {
-
-    }
-
-    .linkbar {
-
-    }
-
     .linkbar > a {
         font-size: 1.8rem;
-    }
-
-    .linkbar > a:hover {
-
     }
 
     .linkbar > a::after {
@@ -281,56 +318,46 @@ h2 {
         
     }
     
-    .linkbar > a:hover::after {
-        
-    }
-
-    
     .information {
         min-height: 100vh;
         display: grid;
-        grid-template-rows: max-content;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 235px 125px 300px 120px;
         justify-content: center;
         align-items: center;
-        grid-template-areas: "banner"
-                             "headline"
-                             "choose"
-                             "location"
-                             "reservation";
+        grid-template-areas: "banner banner"
+                             "headline headline"
+                             "choose location"
+                             "reservation reservation";
         margin-top: 3rem;
         margin-left: 5rem;
         row-gap: 5rem;
+        position: relative;
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 9rem;
         text-align: center;
-        line-height: 6rem;
+        line-height: 10rem;
+        grid-area: headline;
     }
     
     .banner {
-        transform: scale(1.2);
+        transform: scale(1.4);
         grid-area: banner;
         overflow: hidden;
-    }
-
-    .banner > img {
-                
-        
-    }
-
-    .banner > img:hover {
-        
+        margin-top: 5rem;
     }
 
     .choose {
         grid-area: choose;
         margin-top: -3rem;
+        align-self: baseline;
     }
 
     h2 {
-        grid-area: headline;
         font-size: 3rem;
+        
     }
 
     .choose > p,
@@ -342,14 +369,13 @@ h2 {
         grid-area: location;
         font-size: 1.8rem;
         margin-top: -3rem;
+        align-self: baseline;
     }
 
-    .telephone > a {
-
-    }
-
-    .telephone {
-
+    .choose,
+    .location {
+        position: relative;
+        top: 5rem;
     }
 
     .bookUs {

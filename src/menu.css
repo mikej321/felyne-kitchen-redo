@@ -1,0 +1,54 @@
+/* Default Styling */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: grid;
+    background-color: var(--eerie-black);
+    max-width: 375px;
+    grid-template-columns: minmax(250px, 375px);
+    grid-template-areas: "navbar"
+                         "information";
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    grid-area: navbar;
+}
+
+.logo {
+    width: 7.5rem;
+    height: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > img {
+    width: 4.6rem;
+    height: 3.1rem;
+}
