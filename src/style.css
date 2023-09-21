@@ -292,6 +292,7 @@ h2 {
     .content {
         display: grid;
         background-color: var(--eerie-black);
+        width: 100%;
         max-width: 1440px;
         grid-template-columns: minmax(375px, 1440px);
         justify-content: center;

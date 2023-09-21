@@ -91,6 +91,7 @@ body {
 .content {
     display: grid;
     background-color: var(--eerie-black);
+    width: 100%;
     max-width: 375px;
     grid-template-columns: minmax(250px, 375px);
     justify-content: center;
@@ -105,7 +106,8 @@ body {
 }
 
 .logo {
-    width: 7.5rem;
+    width: 100%;
+    max-width: 7.5rem;
     height: 3.8rem;
     display: flex;
     justify-content: center;
@@ -161,15 +163,113 @@ body {
 /* Menu styling */
 
 .menuFrame {
-    width: 347px;
+    font-family: 'Dekko';
+    width: 100%;
+    max-width: 347px;
     min-height: 600px;
     justify-self: center;
     background-color: var(--jet);
     border: 1px solid var(--black-bean);
     margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menuBoard {
+    width: 100%;
     max-width: 323px;
     min-height: 576px;
+    border: 2px solid var(--black-bean);
+    background-color: var(--peach);
+    display: grid;
+    grid-template-rows: 80px auto;
+    justify-content: center;
+    grid-template-areas: "menuTitle"
+                         "menuItems";
+    
+}
+
+.menuTitle {
+    font-size: 2.4rem;
+    margin-top: 2.1rem;
+    text-decoration: underline;
+    justify-self: center;
+    grid-area: menuTitle;
+}
+
+.menuItems {
+    grid-area: menuItems;
+    display: grid;
+    margin-bottom: 2rem;
+    margin-right: 4rem;
+}
+
+.menuItem {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    max-width: 300px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItem > p:first-child {
+    justify-self: start;
+}
+
+@media screen and (min-width: 780px) {
+    .content {
+        width: 100%;
+        max-width: 1440px;
+        grid-template-columns: minmax(375px, 1440px);
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 25.5rem;
+        height: 3.8rem;
+    }
+
+    .logo > img {
+        width: 100%;
+        max-width: 25.6rem;
+        height: 5rem;
+    }
+
+    .linkbar > a {
+        font-size: 1.8rem;
+    }
+
+    .menuFrame {
+        width: 100%;
+        max-width: 1422px;
+        height: 935px;
+    }
+
+    .menuBoard {
+        width: 100%;
+        max-width: 1400px;
+        height: 100%;
+        max-height: 910px;
+    }
+
+    .menuTitle {
+        font-size: 5rem;
+    }
+
+    .menuItems {
+        font-size: 4rem;
+        width: 100%;
+        max-width: 1000px;
+        margin-top: 3rem;
+    }
+
+    .menuItem {
+        width: 100%;
+        max-width: 1000px;
+        gap: 30rem;
+    }
 }
