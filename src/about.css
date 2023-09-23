@@ -1,0 +1,161 @@
+/* Dekko font */
+@font-face {
+    font-family: 'Dekko';
+    src: url('./Dekko.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Josefin Slab Regular Normal Font */
+@font-face {
+    font-family: 'Josefin Slab Normal';
+    src: url('./JosefinSlabRegular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Josefin Slab Bold';
+    src: url('./JosefinSlabRegular.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Oranges */
+    --peach: #FFE4AD;
+    --jasmine: #FFD685;
+    --sunglow: #FFC95C;
+    --selective-yellow: #FFBB33;
+    --orange-web: #FFAD05;
+    --harvest-gold: #E09600;
+    --dark-goldenrod: #BB7A00;
+    --golden-brown: #8F5F00;
+    --field-drab: #664400;
+    /* Greens */
+    --mint-green: #DFF7F3;
+    --celeste: #AEEAE2;
+    --turquoise: #4BD2BE;
+    --Keppel: #31C4AE;
+    --persian-green: #269987;
+    --pine-green: #1D7264;
+    --brunswick-green: #196155;
+    --darker-brunswick-green: #155147;
+    --dark-green: #0D312B;
+    /* Platinum for links */
+    --platinum: #E7EAE8;
+    /* Reds */
+    --lavender-blush: #FEEBEB;
+    --tea-rose: #FDC4C4;
+    --light-red: #F97676;
+    --imperial-red: #F84F4F;
+    --turkey-red: #b00707;
+    --dark-red: #890606;
+    --blood-red: #620404;
+    --black-bean: #3B0202;
+    /* Neutrals */
+    --white-smoke: #F5F5F5;
+    --timberwolf: #D6D6D6;
+    --silver: #C2C2C2;
+    --battleship-gray-light: #999999;
+    --battleship-gray-dark: #858585;
+    --outer-space: #474747;
+    --jet: #333333;
+    --eerie-black: #1F1F1F;
+}
+
+/* Default Styling */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: grid;
+    background-color: var(--eerie-black);
+    max-width: 375px;
+    grid-template-columns: minmax(250px, 375px);
+    grid-template-areas: "navbar"
+                         "information";
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    grid-area: navbar;
+}
+
+.logo {
+    width: 7.5rem;
+    height: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > img {
+    width: 4.6rem;
+    height: 3.1rem;
+}
+
+.linkbar {
+    font-family: 'Josefin Slab Bold';
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: black;
+    padding: 2rem;
+}
+
+.linkbar > a {
+    text-decoration: none;
+    color: var(--sunglow);
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+    display: inline-block;
+    position: relative;
+    
+}
+
+.linkbar > a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark-goldenrod);
+    transition: opacity 0.3s ease-in,
+                transform 0.3s ease-in;
+}
+
+.linkbar > a:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0.4rem, 0);
+}
+
+.linkbar > a:hover {
+    color: var(--celeste);
+}

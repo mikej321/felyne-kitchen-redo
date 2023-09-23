@@ -53,8 +53,11 @@ function createNav() {
 // content.append(createNav());
 // content.append(homeComponent());
 
+// content.append(createNav());
+// content.append(menuComponent());
+
 content.append(createNav());
-content.append(menuComponent());
+content.append(aboutComponent());
 
 
 
