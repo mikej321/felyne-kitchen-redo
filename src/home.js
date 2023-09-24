@@ -1,4 +1,5 @@
 import { content } from './index.js';
+import './home.css';
 import Sign from './sign.svg';
 
 function createBanner() {

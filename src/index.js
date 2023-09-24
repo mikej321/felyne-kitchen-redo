@@ -5,6 +5,7 @@ import Logo from './logo.svg';
 export { content };
 import { homeComponent, createBanner } from './home.js';
 import { menuComponent } from './menu.js';
+import { aboutComponent } from './about.js';
 
 function createNav() {
     // Creates the navbar that will be shared across pages

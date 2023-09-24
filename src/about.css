@@ -194,6 +194,7 @@ body {
     object-position: top;
 }
 
+
 .textInformation {
     display: flex;
     flex-direction: column;
@@ -213,4 +214,84 @@ body {
     color: var(--dark-goldenrod);
     max-width: 240px;
     text-align: center;
+}
+
+@media screen and (min-width: 780px) {
+
+    .content {
+        width: 100%;
+        max-width: 1440px;
+        grid-template-columns: minmax(375px, 1440px);
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 25.5rem;
+        height: 3.8rem;
+    }
+
+    .logo > img {
+        width: 100%;
+        max-width: 25.6rem;
+        height: 5rem;
+    }
+
+    .linkbar > a {
+        font-size: 1.8rem;
+    }
+
+    .aboutContent {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "title title"
+                             "img1 text1"
+                             "text2 img2"
+                             "outro outro";
+    }
+
+    .title {
+        grid-area: title;
+        font-size: 5rem;
+    }
+
+    .portion {
+        margin-top: 5rem;
+    }
+
+    .portion1 > img {
+        grid-area: img1;
+    }
+
+    .portion1 > .textInformation {
+        grid-area: text1;
+    }
+
+    .portion2 > img {
+        grid-area: img2;
+    }
+
+    .portion2 > .textInformation {
+        grid-area: text2;
+    }
+
+    .portion > img {
+        max-width: 300px;
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .textInformation {
+        margin-bottom: 2rem;
+    }
+
+    .textInformation > h2 {
+        font-size: 3rem;
+    }
+
+    .textInformation > p {
+        font-size: 2rem;
+    }
+
+    .outro {
+        grid-area: outro;
+    }
 }
