@@ -32,12 +32,15 @@ function createNav() {
 
     // creates the links that will be added to the linkbar
     const home = document.createElement('a');
+    home.id = 'home';
     home.textContent = 'Home';
 
     const menu = document.createElement('a');
+    menu.id = 'menu';
     menu.textContent = 'Menu';
 
     const about = document.createElement('a');
+    about.id = 'about';
     about.textContent = 'About';
 
     // adds the links to the linkbar container
@@ -51,14 +54,48 @@ function createNav() {
     return nav;
 }
 
-// content.append(createNav());
-// content.append(homeComponent());
-
-// content.append(createNav());
-// content.append(menuComponent());
+// Initial page load
 
 content.append(createNav());
-content.append(aboutComponent());
+content.append(homeComponent());
+
+// Event listener for the home page
+document.addEventListener('click', function(event) {
+    let tarElement = event.target;
+    if (tarElement.tagName == 'A' && tarElement.id == 'home') {
+        while (content.firstChild) {
+            content.removeChild(content.firstChild);
+        }
+        content.append(createNav());
+        content.append(homeComponent());
+    }
+})
+
+// Event listener for the menu page
+document.addEventListener('click', function(event) {
+    let tarElement = event.target;
+    if (tarElement.tagName == 'A' && tarElement.id == 'menu') {
+        while (content.firstChild) {
+            content.removeChild(content.firstChild);
+        }
+        content.append(createNav());
+        content.append(menuComponent());
+    }
+})
+
+// Event listener for about page
+document.addEventListener('click', function(event) {
+    let tarElement = event.target;
+    if (tarElement.tagName == 'A' && tarElement.id == 'about') {
+        while (content.firstChild) {
+            content.removeChild(content.firstChild);
+        }
+        content.append(createNav());
+        content.append(aboutComponent());
+    }
+})
+
+
 
 
 
